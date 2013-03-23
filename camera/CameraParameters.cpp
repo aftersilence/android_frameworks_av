@@ -355,10 +355,12 @@ const char CameraParameters::FOCUS_MODE_EDOF[] = "edof";
 const char CameraParameters::FOCUS_MODE_CONTINUOUS_VIDEO[] = "continuous-video";
 const char CameraParameters::FOCUS_MODE_CONTINUOUS_PICTURE[] = "continuous-picture";
 #if defined(QCOM_HARDWARE)
-const char CameraParameters::FOCUS_MODE_NORMAL[] = "normal";
 #ifdef QCOM_LEGACY_CAM_PARAMS
 const char CameraParameters::FOCUS_MODE_CONTINUOUS_CAMERA[] = "continuous-camera";
 #endif
+const char CameraParameters::FOCUS_MODE_NORMAL[] = "normal";
+
+
 const char CameraParameters::KEY_SKIN_TONE_ENHANCEMENT[] = "skinToneEnhancement";
 const char CameraParameters::KEY_SUPPORTED_SKIN_TONE_ENHANCEMENT_MODES[] = "skinToneEnhancement-values";
 
@@ -750,7 +752,7 @@ void CameraParameters::getSupportedPreviewSizes(Vector<Size> &sizes) const
 #ifdef QCOM_LEGACY_CAM_PARAMS
 void CameraParameters::setPostviewSize(int width, int height)
 {
-	// dummy
+    // dummy
 }
 #endif
 

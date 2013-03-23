@@ -183,18 +183,18 @@ public:
     static const char KEY_PREVIEW_FRAME_RATE_AUTO_MODE[];
     static const char KEY_PREVIEW_FRAME_RATE_FIXED_MODE[];
 #ifdef QCOM_LEGACY_CAM_PARAMS
-	static const char KEY_CAPTURE_MODE[];
-	static const char KEY_SUPPORTED_CAPTURE_MODES[];
-	static const char KEY_PICTURE_COUNT[];
-	static const char KEY_MAX_BURST_PICTURE_COUNT[];
-	static const char KEY_SUPPORTED_CONTINUOUS_AF[];
-	static const char KEY_SUPPORTED_CAF[];
-	static const char CAPTURE_MODE_NORMAL[];
-	static const char CAPTURE_MODE_BURST[];
-	static const char CAPTURE_MODE_CONTI_BURST[];
-	static const char CAPTURE_MODE_HDR[];
-	static const char CAPTURE_MODE_HJR[];
-	static const char CAPTURE_MODE_PANORAMA[];
+    static const char KEY_CAPTURE_MODE[];
+    static const char KEY_SUPPORTED_CAPTURE_MODES[];
+    static const char KEY_PICTURE_COUNT[];
+    static const char KEY_MAX_BURST_PICTURE_COUNT[];
+    static const char KEY_SUPPORTED_CONTINUOUS_AF[];
+    static const char KEY_SUPPORTED_CAF[];
+    static const char CAPTURE_MODE_NORMAL[];
+    static const char CAPTURE_MODE_BURST[];
+    static const char CAPTURE_MODE_CONTI_BURST[];
+    static const char CAPTURE_MODE_HDR[];
+    static const char CAPTURE_MODE_HJR[];
+    static const char CAPTURE_MODE_PANORAMA[];
 #endif
 #endif
     // The dimensions for captured pictures in pixels (width x height).
