@@ -356,8 +356,9 @@ const char CameraParameters::FOCUS_MODE_CONTINUOUS_VIDEO[] = "continuous-video";
 const char CameraParameters::FOCUS_MODE_CONTINUOUS_PICTURE[] = "continuous-picture";
 #if defined(QCOM_HARDWARE)
 const char CameraParameters::FOCUS_MODE_NORMAL[] = "normal";
-
-
+#ifdef QCOM_LEGACY_CAM_PARAMS
+const char CameraParameters::FOCUS_MODE_CONTINUOUS_CAMERA[] = "continuous-camera";
+#endif
 const char CameraParameters::KEY_SKIN_TONE_ENHANCEMENT[] = "skinToneEnhancement";
 const char CameraParameters::KEY_SUPPORTED_SKIN_TONE_ENHANCEMENT_MODES[] = "skinToneEnhancement-values";
 
@@ -398,11 +399,26 @@ const char CameraParameters::SKIN_TONE_ENHANCEMENT_ENABLE[] = "enable";
 const char CameraParameters::SKIN_TONE_ENHANCEMENT_DISABLE[] = "disable";
 
 const char CameraParameters::KEY_SHARPNESS[] = "sharpness";
+#ifdef QCOM_LEGACY_CAM_PARAMS
+const char CameraParameters::KEY_MAX_SHARPNESS[] = "sharpness-max";
+const char CameraParameters::KEY_MIN_SHARPNESS[] = "sharpness-min";
+#else
 const char CameraParameters::KEY_MAX_SHARPNESS[] = "max-sharpness";
+#endif
 const char CameraParameters::KEY_CONTRAST[] = "contrast";
+#ifdef QCOM_LEGACY_CAM_PARAMS
+const char CameraParameters::KEY_MAX_CONTRAST[] = "contrast-max";
+const char CameraParameters::KEY_MIN_CONTRAST[] = "contrast-min";
+#else
 const char CameraParameters::KEY_MAX_CONTRAST[] = "max-contrast";
+#endif
 const char CameraParameters::KEY_SATURATION[] = "saturation";
+#ifdef QCOM_LEGACY_CAM_PARAMS
+const char CameraParameters::KEY_MAX_SATURATION[] = "saturation-max";
+const char CameraParameters::KEY_MIN_SATURATION[] = "saturation-min";
+#else
 const char CameraParameters::KEY_MAX_SATURATION[] = "max-saturation";
+#endif
 
 //Values for DENOISE
 const char CameraParameters::DENOISE_OFF[] = "denoise-off";
@@ -731,6 +747,13 @@ void CameraParameters::getSupportedPreviewSizes(Vector<Size> &sizes) const
 }
 
 #ifdef QCOM_HARDWARE
+#ifdef QCOM_LEGACY_CAM_PARAMS
+void CameraParameters::setPostviewSize(int width, int height)
+{
+	// dummy
+}
+#endif
+
 void CameraParameters::getSupportedHfrSizes(Vector<Size> &sizes) const
 {
     const char *hfrSizesStr = get(KEY_SUPPORTED_HFR_SIZES);
